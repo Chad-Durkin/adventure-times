@@ -1,0 +1,24 @@
+<h3>Create a new Character</h3>
+<div class="newCharForm">
+  <div class="form-group">
+    <label for="name">Character Name:</label>
+    <input #newName>
+  </div>
+  <div class="form-group">
+    <label for="height">Character Height:</label>
+    <input #newHeight>
+  </div>
+  <div class="form-group">
+    <label for="race">Character Race:</label>
+    <select #newRace>
+      <option value="Wood Elf">Wood Elf</option>
+      <option value="Dark Elf">Dark Elf</option>
+      <option value="Human">Human</option>
+      <option value="Orc">Orc</option>
+      <option value="Red Gaurd">Red Gaurd</option>
+      <option value="Nord">Nord</option>
+      <option value="Dwarf">Dwarf</option>
+    </select>
+  </div>
+  <button type="submit" (click)="createChar(newName.value, newHeight.value, newRace.value)">Create</button>
+</div>
