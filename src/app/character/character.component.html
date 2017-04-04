@@ -20,5 +20,13 @@
       <option value="Dwarf">Dwarf</option>
     </select>
   </div>
-  <button type="submit" (click)="createChar(newName.value, newHeight.value, newRace.value)">Create</button>
+  <div *ngIf="skillPoints > 0">
+    <h1>Skill Points Left: {{skillPoints}}</h1>
+    <h3>Charisma: {{charisma}} <button (click)="addSkill('charisma')">+</button><button (click)="minusSkill('charisma')">-</button></h3>
+    <h3>Strength: {{strength}} <button (click)="addSkill('strength')">+</button><button (click)="minusSkill('strength')">-</button></h3>
+    <h3>Dexterity: {{dexterity}} <button (click)="addSkill('dexterity')">+</button><button (click)="minusSkill('dexterity')">-</button></h3>
+    <h3>Acrobatics: {{acrobatics}} <button (click)="addSkill('acrobatics')">+</button><button (click)="minusSkill('acrobatics')">-</button></h3>
+    <h3>Luck: {{luck}} <button (click)="addSkill('luck')">+</button><button (click)="minusSkill('luck')">+</button></h3>
+  </div>
+  <button type="submit" (click)="createChar(newName.value, newHeight.value, newRace.value,  charisma, acrobatics, dexterity, strength, luck)">Create</button>
 </div>

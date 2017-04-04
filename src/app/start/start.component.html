@@ -1,0 +1,9 @@
+<h2>{{(character | async)?.name}}, you are in a dungeon and you see 3 doors to take, which path do you choose?</h2>
+
+<select #newChoice>
+  <option value="left">Left</option>
+  <option value="forward">Forward</option>
+  <option value="right">Right</option>
+</select>
+
+<button (click)="pathChoice(newChoice.value)">Decide</button>

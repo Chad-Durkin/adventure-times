@@ -1,0 +1,17 @@
+<h1>Characters</h1>
+<div *ngFor="let character of characters | async" class="panel panel-default">
+  <div class="panel-body">
+    <h2><strong><em>{{character.name}}</em></strong></h2>
+    <h3>{{character.height}}</h3>
+    <h3>{{character.race}}</h3>
+    <h3>Stats</h3>
+    <ul>
+      <li>DEXTERITY: {{character.dexterity}}</li>
+      <li>STRENGTH: {{character.strength}}</li>
+      <li>ACROBATICS: {{character.acrobatics}}</li>
+      <li>CHARISMA: {{character.charisma}}</li>
+      <li>LUCK: {{character.luck}}</li>
+    </ul>
+    <button type="submit" (click)="playChar(character.$key)">PLAY</button>
+  </div>
+</div>

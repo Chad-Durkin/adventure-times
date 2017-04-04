@@ -9,8 +9,12 @@ import { Router } from '@angular/router';
 export class HomeComponent{
 
   constructor(private router: Router) { }
+
   startGame() {
-    this.router.navigate(['character'])
+    this.router.navigate(['character']);
+  }
+  chooseChar() {
+    this.router.navigate(['character-list']);
   }
 
 }

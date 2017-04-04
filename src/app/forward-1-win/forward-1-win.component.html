@@ -1,0 +1,9 @@
+<h1>Hey by the way, your health is at {{(character | async)?.health}} and you have {{(character | async)?.healthPotions}} Health Potions!</h1>
+
+<div class="useHP" *ngIf="(character | async)?.healthPotions > 0">
+  <button (click)="healUp()" type="click" name="button">Heal Up</button>
+</div>
+
+<div class="moveOn">
+  <button (click)="moveOn()" type="click" name="button">Continue</button>
+</div>

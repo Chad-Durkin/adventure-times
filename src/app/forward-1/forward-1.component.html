@@ -1,0 +1,35 @@
+<div *ngFor="let char of characters | async">
+  <div *ngIf="char.$key === charId">
+
+    <h2>{{char.name}} encounters a hostile guard! What do you do?</h2>
+    <h2>Your HP -> {{char.health}}</h2>
+
+    <div *ngIf="guard.health > 0">
+      <h2>Guard HP -> {{guard.health}}</h2>
+      <select #newAction>
+        <option value="long-bow">Shoot with Bow</option>
+        <option value="shield">Shield Bash</option>
+        <option value="run">Run Around</option>
+        <option value="persuade">Charm his ass</option>
+      </select>
+
+      <button (click)="action(newAction.value, char)">Choose Action</button>
+    </div>
+
+
+      <!-- Damage dispaly and combat win condition -->
+      <div *ngIf="charDamage">
+
+        <div *ngIf="guard.health > 0">
+          <h3>You do {{charDamage}} damage to the gaurd!</h3>
+          <h3>The guard does {{enemyDamage}} damage to you!</h3>
+        </div>
+
+        <div *ngIf="guard.health <= 0">
+          <h1>Yes! You killed the guard!</h1>
+          <button (click)="continueAdventure()" type="submit" class="continueBtn">Continue Adventure!</button>
+        </div>
+
+      </div>
+  </div>
+</div>
